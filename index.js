@@ -57,17 +57,19 @@ const albionValidator=function(context){
 
                 var jugement=true;
                 if(presetRule[rule[0]]){
-                    jugement = presetRule[rule[0]](rule[1],rule[2],rule[3],rule[4]);
+                    jugement = presetRule[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
                 }
                 else if(context[rule[0]]){
-                    jugement = context[rule[0]](rule[1],rule[2],rule[3],rule[4]);
+                    jugement = context[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
                 }
 
                 if(!jugement){
+                    
+                    if(!response[field]){
+                        response[field]=[];
+                    }
+
                     if(!option.oneOutput){
-                        if(!response[field]){
-                            response[field]=[];
-                        }
                         response[field].push(message);    
                     }
                     else{
@@ -78,17 +80,12 @@ const albionValidator=function(context){
 
             if(!jugement){
                 if(option.oneOutput){
-                    response[field]=message;
+                    response[field].push(message);
                 }    
             }
         }
 
-        if(Object.keys(response).length){
-            return response;
-        }
-        else{
-            return null;
-        }
+        return response;
     };
 
     this.addRule=function(field, rule, message){
@@ -129,6 +126,52 @@ const albionValidator=function(context){
     };
 
 };
-const validatorResponse = function(){};
+const validatorResponse = function(){
+
+    this.set=function(field,value){
+
+        if(!this[field]){
+            this[field]=[];
+        }
+        this[field].push(value);
+
+    }
+
+    this.get=function(field){
+
+        var str="";
+
+        if(field){
+            if(!this[field]){
+                return;
+            }
+
+            for(var n=0;n<this[field].length;n++){
+                str+=this[field][n]+"\n";
+            }
+        }
+        else{
+            var colum=Object.keys(this);
+            for(var n=0;n<colum.length;n++){
+                var f_=colum[n];
+                if(f_!="get" && f_!="set"){                   
+                    var strb=this.get(f_);
+                    if(strb){
+                        str+=strb;
+                    }
+                }
+            }
+
+        }
+
+        if(str){
+            return str;
+        }
+        else{
+            return null;
+        }
+    };
+
+};
 
 module.exports=albionValidator;

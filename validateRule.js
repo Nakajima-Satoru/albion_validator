@@ -6,7 +6,7 @@ module.exports=function(_value){
 	 * @returns 
 	 */
 	this.required = function(value){
-				
+
 		if(value){
 			return true;
 		}
