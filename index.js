@@ -10,6 +10,10 @@ const albionValidator=function(context){
 
     this.verify=function(data,option){
 
+        if(context.beforeValidate){
+            context.beforeValidate(data);
+        }
+
         if(!option){
             option={};
         }
