@@ -1,4 +1,5 @@
-const validateRule = require("./validateRule.js");
+const ValidateRule = require("./rule.js");
+const ValidatorResponse = require("./response.js");
 
 const albionValidator=function(context){
 
@@ -34,9 +35,8 @@ const albionValidator=function(context){
             rules=option.rules;
         }
 
-        var presetRule = new validateRule(data);
-
-        var response=new validatorResponse();
+        var validateRule = new ValidateRule(data);
+        var response=new ValidatorResponse();
 
         var colum=Object.keys(rules);
 
@@ -60,8 +60,8 @@ const albionValidator=function(context){
                 }
 
                 var jugement=true;
-                if(presetRule[rule[0]]){
-                    jugement = presetRule[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
+                if(validateRule[rule[0]]){
+                    jugement = validateRule[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
                 }
                 else if(context[rule[0]]){
                     jugement = context[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
@@ -130,52 +130,4 @@ const albionValidator=function(context){
     };
 
 };
-const validatorResponse = function(){
-
-    this.set=function(field,value){
-
-        if(!this[field]){
-            this[field]=[];
-        }
-        this[field].push(value);
-
-    }
-
-    this.get=function(field){
-
-        var str="";
-
-        if(field){
-            if(!this[field]){
-                return;
-            }
-
-            for(var n=0;n<this[field].length;n++){
-                str+=this[field][n]+"\n";
-            }
-        }
-        else{
-            var colum=Object.keys(this);
-            for(var n=0;n<colum.length;n++){
-                var f_=colum[n];
-                if(f_!="get" && f_!="set"){                   
-                    var strb=this.get(f_);
-                    if(strb){
-                        str+=strb;
-                    }
-                }
-            }
-
-        }
-
-        if(str){
-            return str;
-        }
-        else{
-            return null;
-        }
-    };
-
-};
-
 module.exports=albionValidator;

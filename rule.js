@@ -1,4 +1,4 @@
-module.exports=function(_value){
+const ValidateRule = function(_value){
 
 	/**
 	 * required
@@ -634,3 +634,4 @@ module.exports=function(_value){
 	};
 
 };
+module.exports = ValidateRule;
