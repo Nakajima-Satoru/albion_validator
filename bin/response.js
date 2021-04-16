@@ -1,5 +1,22 @@
+/**
+ * ==================================================
+ * 
+ * ALBION_VALIDATOR Ver 1.0.0
+ * 
+ * response.js (validatorResponse)
+ * 
+ * CopyLight: Nakajima-Satoru since 0201/04/16
+ * 
+ * ==================================================
+ */
+
 const validatorResponse = function(){
 
+    /**
+     * set
+     * @param {*} field 
+     * @param {*} value 
+     */
     this.set=function(field,value){
 
         if(!this[field]){
@@ -9,6 +26,11 @@ const validatorResponse = function(){
 
     }
 
+    /**
+     * get
+     * @param {*} field 
+     * @returns 
+     */
     this.get=function(field){
 
         var str="";

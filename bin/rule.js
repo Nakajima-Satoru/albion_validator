@@ -1,3 +1,15 @@
+/**
+ * ==================================================
+ * 
+ * ALBION_VALIDATOR Ver 1.0.0
+ * 
+ * rule.js (ValidateRule)
+ * 
+ * CopyLight: Nakajima-Satoru since 0201/04/16
+ * 
+ * ==================================================
+ */
+
 const ValidateRule = function(_value){
 
 	/**
@@ -206,6 +218,12 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * maxLength
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.maxLength = function(value,arg1){
 
 		if(!value){
@@ -219,6 +237,13 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * betweenLength
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.betweenLength = function(value,arg1,arg2){
 
 		if(!value){
@@ -233,6 +258,12 @@ const ValidateRule = function(_value){
 
 	};
 
+	/**
+	 * value
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.value = function(value,arg1){
 
 		if(!value){
@@ -247,6 +278,12 @@ const ValidateRule = function(_value){
 
 	};
 
+	/**
+	 * minValue
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
     this.minValue = function(value,arg1){
 
 		if(!value){
@@ -260,6 +297,12 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * maxValue
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.maxValue = function(value,arg1){
 
 		if(!value){
@@ -273,6 +316,13 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * betweenValue
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.betweenValue = function(value,arg1,arg2){
 
 		if(!value){
@@ -286,6 +336,12 @@ const ValidateRule = function(_value){
 		return false;	
 	};
 
+	/**
+	 * selectedCount
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.selectedCount = function(value,arg1){
 
 		if(!value){
@@ -299,6 +355,12 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * minSelectedCount
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.minSelectedCount = function(value,arg1){
 
 		if(!value){
@@ -312,6 +374,12 @@ const ValidateRule = function(_value){
 		return false;
 	};
 
+	/**
+	 * maxSelectedCount
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.maxSelectedCount = function(value,arg1){
 
 		if(!value){
@@ -324,6 +392,14 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * betweenSelectedCount
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.betweenSelectedCount = function(value,arg1,arg2){
 
 		if(!value){
@@ -336,6 +412,13 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * like
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.like = function(value,arg1){
 
 		if(!value){
@@ -348,6 +431,13 @@ const ValidateRule = function(_value){
 
 		return false;	
 	};
+
+	/**
+	 * any
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.any = function(value,arg1){
 
 		if(!value){
@@ -378,6 +468,11 @@ const ValidateRule = function(_value){
 
 	};
 
+	/**
+	 * date
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.date = function(value){
 
 		if(!value){
@@ -393,6 +488,13 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * minDate
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.minDate = function(value,arg1){
 
 		if(!value){
@@ -411,6 +513,13 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * maxDate
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.maxDate = function(value,arg1){
 
 		if(!value){
@@ -429,6 +538,14 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * betweenDate
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.betweenDate = function(value,arg1,arg2){
 
 		if(!value){
@@ -450,6 +567,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isInt
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isInt = function(value){
 
 		if(!value){
@@ -466,6 +589,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isBool
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isBool = function(value){
 
 		if(!value){
@@ -478,6 +607,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isEmail
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isEmail = function(value){
 
 		if(!value){
@@ -490,6 +625,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isTel
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isTel = function(value){
 
 		if(!value){
@@ -506,6 +647,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isIp
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isIp = function(value){
 
 		if(!value){
@@ -518,6 +665,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isUrl
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.isUrl = function(value){
 
 		if(!value){
@@ -530,6 +683,13 @@ const ValidateRule = function(_value){
 
 		return false;	
 	};
+
+	/**
+	 * regex
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @returns 
+	 */
 	this.regex = function(value,arg1){
 
 		if(!value){
@@ -550,6 +710,14 @@ const ValidateRule = function(_value){
 
 		return false;	
 	};
+
+	/**
+	 * isZipJP
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.isZipJP = function(value,arg1,arg2){
 
 		if(!value){
@@ -562,6 +730,14 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isKatakana
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.isKatakana = function(value,arg1,arg2){
 
 		if(!value){
@@ -580,6 +756,14 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * isHiragana
+	 * @param {*} value 
+	 * @param {*} arg1 
+	 * @param {*} arg2 
+	 * @returns 
+	 */
 	this.isHiragana = function(value,arg1,arg2){
 
 		if(!value){
@@ -598,6 +782,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * allowedBeforeToday
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.allowedBeforeToday = function(value){
 
 		if(!value){
@@ -615,6 +805,12 @@ const ValidateRule = function(_value){
 
 		return false;
 	};
+
+	/**
+	 * allowedAfterToday
+	 * @param {*} value 
+	 * @returns 
+	 */
 	this.allowedAfterToday = function(value){
 
 		if(!value){
