@@ -147,7 +147,7 @@ const ValidateRule = function(_value){
 
 		var reg="^[a-zA-Z0-9]+$";
 
-		if(jsf3.validateRule.regex(value,reg)){
+		if(this.regex(value,reg)){
 			return true;
 		}
 
@@ -174,7 +174,7 @@ const ValidateRule = function(_value){
 		
 		var reg="^[0-9]+$";
 
-		if(jsf3.validateRule.regex(value,reg)){
+		if(this.regex(value,reg)){
 			return true;
 		}
 
