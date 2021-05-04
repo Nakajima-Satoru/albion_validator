@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * ALBION_VALIDATOR Ver 1.0.0
+ * FW_DAGGER_VALIDATOR Ver 1.0.0
  * 
  * index.js
  * 
@@ -10,5 +10,5 @@
  * ==================================================
  */
 
-const albionValidator = require("./bin/validator.js");
-module.exports = albionValidator;
+const daggerValidator = require("./bin/validator.js");
+module.exports = daggerValidator;

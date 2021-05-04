@@ -1,25 +1,26 @@
 {
-  "name": "albion_validator",
+  "name": "fw_dagger_validator",
   "version": "1.0.0",
-  "description": "node.js web freamework \"albion\" for Validation package..",
+  "description": "node.js web freamework \"fw_dagger\" for Validation package..",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nakajima-Satoru/albion_validator.git"
+    "url": "git+https://github.com/Nakajima-Satoru/fw_dagger_validator.git"
   },
   "keywords": [
     "framework",
     "web",
     "mvc",
-    "validation"
+    "validation",
+    "fw_dagger"
   ],
   "author": "Nakajima-Satoru",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nakajima-Satoru/albion_validator/issues"
+    "url": "https://github.com/Nakajima-Satoru/fw_dagger_validator/issues"
   },
-  "homepage": "https://github.com/Nakajima-Satoru/albion_validator#readme"
+  "homepage": "https://github.com/Nakajima-Satoru/fw_dagger_validator#readme"
 }

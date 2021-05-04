@@ -1,9 +1,9 @@
 /**
  * ==================================================
  * 
- * ALBION_VALIDATOR Ver 1.0.0
+ * FW_DAGGER_VALIDATOR Ver 1.0.0
  * 
- * validator.js (albionValidator)
+ * validator.js (daggerValidator)
  * 
  * CopyLight: Nakajima-Satoru since 0201/04/16
  * 
@@ -13,7 +13,7 @@
 const ValidateRule = require("./rule.js");
 const ValidatorResponse = require("./response.js");
 
-const albionValidator=function(context){
+const daggerValidator=function(context){
 
     if(!context){
         context={};
@@ -169,4 +169,4 @@ const albionValidator=function(context){
     };
 
 };
-module.exports=albionValidator;
+module.exports = daggerValidator;

@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * ALBION_VALIDATOR Ver 1.0.0
+ * FW_DAGGER_VALIDATOR Ver 1.0.0
  * 
  * rule.js (ValidateRule)
  * 
