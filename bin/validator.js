@@ -67,6 +67,26 @@ const daggerValidator=function(context){
                 var ruleField=colum2[n2];
                 var rr_=r_[ruleField];
 
+                if(typeof rr_ == "string"){
+                    var rr2_=rr_.split(":");
+                    var buff=[];
+
+                    buff.push(rr2_[0]);
+
+                    if(rr2_[1]){
+                        var rr22_ = rr2_[1].split(",");
+                        for(var n3=0;n3<rr22_.length;n3++){
+                            buff.push(rr22_[n3]);
+                        }
+                    }
+
+                    rr_={
+                        rule:buff,
+                    };
+                }
+
+                console.log(rr_);
+
                 var rule=rr_.rule;
                 if(typeof rule == "string"){
                     rule=[rule];
@@ -74,15 +94,25 @@ const daggerValidator=function(context){
 
                 var message=rr_.message;
                 if(!message){
-                    message="index="+ruleField+", rule="+rule.toString();
+                    if(typeof rule === "function"){
+                        message="index="+ruleField+", rule=[FUNCTION]";
+                    }
+                    else{
+                        message="index="+ruleField+", rule="+rule.toString();
+                    }
                 }
 
                 var jugement=true;
-                if(validateRule[rule[0]]){
-                    jugement = validateRule[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
+                if(typeof rule === "function"){
+                    jugement = rule(data[field]);
                 }
-                else if(context[rule[0]]){
-                    jugement = context[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
+                else{
+                    if(validateRule[rule[0]]){
+                        jugement = validateRule[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
+                    }
+                    else if(context[rule[0]]){
+                        jugement = context[rule[0]](data[field],rule[1],rule[2],rule[3],rule[4]);
+                    }    
                 }
 
                 if(!jugement){

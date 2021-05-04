@@ -35,8 +35,8 @@ const ValidateRule = function(_value){
 	 */
 	this.requiredIf = function(value,arg1,arg2){
 
-		if(this._value[arg1]){
-			if(this._value[arg1]==arg2){
+		if(_value[arg1]){
+			if(_value[arg1]==arg2){
 				if(value){
 					return true;
 				}
@@ -63,7 +63,7 @@ const ValidateRule = function(_value){
 
 		for(var n=0;n<arg1.length;n++){
 			var a_=arg1[n];
-			if(!this._value[a_]){
+			if(!_value[a_]){
 				return true;
 			}
 		}
@@ -91,7 +91,7 @@ const ValidateRule = function(_value){
 		var juge=false;
 		for(var n=0;n<arg1.length;n++){
 			var a_=arg1[n];
-			if(this._value[a_]){
+			if(_value[a_]){
 				juge=true;
 			}
 		}
@@ -119,7 +119,7 @@ const ValidateRule = function(_value){
 			return true;
 		}
 
-		if(this._value[arg1]==value){
+		if(_value[arg1]==value){
 			return true;
 		}
 
