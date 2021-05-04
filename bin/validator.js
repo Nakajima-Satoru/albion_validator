@@ -85,8 +85,6 @@ const daggerValidator=function(context){
                     };
                 }
 
-                console.log(rr_);
-
                 var rule=rr_.rule;
                 if(typeof rule == "string"){
                     rule=[rule];
