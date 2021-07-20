@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * FW_DAGGER_VALIDATOR Ver 1.0.0
+ * m02_validator
  * 
  * rule.js (ValidateRule)
  * 

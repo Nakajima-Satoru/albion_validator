@@ -1,7 +1,7 @@
 {
-  "name": "fw_dagger_validator",
+  "name": "m02_validator",
   "version": "1.0.0",
-  "description": "node.js web freamework \"fw_dagger\" for Validation package..",
+  "description": "node.js web freamework \"m02\" for Validation package..",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
     "web",
     "mvc",
     "validation",
-    "fw_dagger"
+    "m02"
   ],
   "author": "Nakajima-Satoru",
   "license": "MIT",
